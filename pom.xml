@@ -42,6 +42,7 @@
 						<workerType>${vCore}</workerType>
 						<workers>${workers}</workers>
 						<objectStoreV2>true</objectStoreV2>
+						<skipDeploymentVerification>true</skipDeploymentVerification>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
