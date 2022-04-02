@@ -15,7 +15,7 @@
             <SizeBasedTriggeringPolicy size="10 MB"/>
             <DefaultRolloverStrategy max="10"/>
         </RollingFile>        
-        <Http name="NEWRELIC" url="https://insights-collector.newrelic.com/v1/accounts/3460614/events">		
+        <Http name="NEWRELIC" category="com.corona.dashboard.trigger" url="https://insights-collector.newrelic.com/v1/accounts/3460614/events">		
 		        <Property name="X-insert-Key" value="NRII-jjABYLYYMgCgipxqR2FINSmxjehNOMPZ" />		
 		        <Property name="Content-Type" value="application/json" />		
 		        <PatternLayout pattern="%m%n"></PatternLayout>		
@@ -32,9 +32,10 @@
         <!-- Mule logger -->
         <AsyncLogger name="org.mule.runtime.core.internal.processor.LoggerMessageProcessor" level="INFO"/>
 
-        <AsyncRoot name ="asynlogger" level="INFO">
+        <AsyncRoot level="INFO" name="com.corona.dashboard.trigger" >
             <AppenderRef ref="NEWRELIC"/>
         </AsyncRoot>
     </Loggers>
 
 </Configuration>
+
